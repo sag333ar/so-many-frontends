@@ -15,6 +15,14 @@ test("isHiveUrl happy path", (t) => {
   );
 });
 
+
+test("isHiveUrl travelfeed", (t) => {
+  assert.strictEqual(
+    isHiveUrl("https://travelfeed.com/@mibreit-photo/la-fortuna-photography-guide"),
+    true
+  );
+});
+
 test("isHiveUrl leo path", (t) => {
   assert.strictEqual(
     isHiveUrl("https://leofinance.io/posts/taskmaster4450/the-hive-protocol-the-largest-financial-institution-in-the-world"),

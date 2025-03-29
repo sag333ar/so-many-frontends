@@ -10,6 +10,7 @@ const hiveDomains = [
   "actifit.io",
   "ctptalk.com",
   "travelfeed.io",
+  "travelfeed.com",
   "hivehustlers.io",
   "hive.blocktunes.net",
   "hivelist.org",
