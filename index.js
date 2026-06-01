@@ -35,6 +35,7 @@ const hiveDomains = [
   "3speak.tv",
   "reverio.io",
   "d.buzz",
+  "hivesuite.app",
 ];
 
 function isHiveUrl(url) {
