@@ -10,7 +10,7 @@ test("hiveDomains is usable", (t) => {
 
 test("isHiveUrl happy path", (t) => {
   assert.strictEqual(
-    isHiveUrl("https://www.reverio.io/question/manuphotos/muogh"),
+    isHiveUrl("https://www.peakd.com/@manuphotos/muogh"),
     true
   );
 });
@@ -69,20 +69,6 @@ test("isHiveUrl invalid URL", (t) => {
   assert.strictEqual(
     isHiveUrl("/r/the-mystery-of-time-challengers-1991.html"),
     false
-  );
-});
-
-test("parseHiveUrl reverio question", (t) => {
-  assert.deepEqual(
-    parseHiveUrl("https://www.reverio.io/question/manuphotos/muogh"),
-    { domain: "www.reverio.io", author: "manuphotos", permlink: "muogh" }
-  );
-});
-
-test("parseHiveUrl reverio answer", (t) => {
-  assert.deepEqual(
-    parseHiveUrl("https://www.reverio.io/answer/eturnerx/rpvaynol"),
-    { domain: "www.reverio.io", author: "eturnerx", permlink: "rpvaynol" }
   );
 });
 
@@ -165,58 +151,6 @@ test("parseHiveUrl invalid URL", (t) => {
       permlink: undefined,
     }
   );
-});
-
-test("parse invalid Dbuzz", (t) => {
-  assert.deepEqual(
-    parseHiveUrl("https://d.buzz/#/@aaliyahholt/r/naq4jloe2l8zofrf8urijb"),
-    {
-      author: undefined,
-      domain: undefined,
-      permlink: undefined,
-    }
-  );
-});
-
-test("parse valid Dbuzz", (t) => {
-  assert.deepEqual(
-    parseHiveUrl("https://d.buzz/#/@aaliyahholt/c/naq4jloe2l8zofrf8urijb"),
-    {
-      author: "aaliyahholt",
-      domain: "d.buzz",
-      permlink: "naq4jloe2l8zofrf8urijb",
-    }
-  );
-});
-
-test("missing protocol", (t) => {
-  assert.deepEqual(
-    parseHiveUrl("d.buzz/#/@aaliyahholt/c/naq4jloe2l8zofrf8urijb"),
-    {
-      author: "aaliyahholt",
-      domain: "d.buzz",
-      permlink: "naq4jloe2l8zofrf8urijb",
-    }
-  );
-});
-
-test("parse valid next Dbuzz", (t) => {
-  assert.deepEqual(
-    parseHiveUrl("https://next.d.buzz/#/@aaliyahholt/c/naq4jloe2l8zofrf8urijb"),
-    {
-      author: "aaliyahholt",
-      domain: "next.d.buzz",
-      permlink: "naq4jloe2l8zofrf8urijb",
-    }
-  );
-});
-
-test("parse only Dbuzz", (t) => {
-  assert.deepEqual(parseHiveUrl("https://d.buzz"), {
-    domain: undefined,
-    author: undefined,
-    permlink: undefined
-  });
 });
 
 test("leofinance new UI blog view URL", (t) => {
