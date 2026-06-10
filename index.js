@@ -29,6 +29,7 @@ const hiveDomains = [
   "thiagore.com",
   "blazarforce.net",
   "lassecash.com",
+  "hivesuite.app",
   // Special cases below this line
   "leofinance.io",
   "inleo.io",
@@ -95,6 +96,9 @@ function parseHiveUrl(hiveLink) {
   if (hiveLink.includes("reverio.io/answer/")) {
     hiveLink = hiveLink.replace("reverio.io/answer/", "reverio.io/@");
   }
+  if (hiveLink.includes("hivesuite.app/post/")) {
+    hiveLink = hiveLink.replace("hivesuite.app/post/", "hivesuite.app/@");
+  }
   if (hiveLink.includes("d.buzz")) {
     if (!hiveLink.includes("@")) {
       return EMPTY_RETURN_VALUE;
@@ -151,6 +155,10 @@ function appStringToHiveLink(app, author, permlink) {
 
   if (app.includes("liketu")) {
     return `https://www.liketu.com/@${author}/${permlink}`;
+  }
+
+  if (app.includes("hivesuite")) {
+    return `https://hivesuite.app/@${author}/${permlink}`;
   }
 
   return `https://hivel.ink/@${author}/${permlink}`;
