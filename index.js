@@ -17,11 +17,11 @@ const hiveDomains = [
   "tribaldex.blog",
   "sloth.buzz",
   "lassecash.com",
-  "hivesuite.app",
   // Special cases below this line
   "leofinance.io",
   "inleo.io",
   "3speak.tv",
+  "hivesuite.app",
 ];
 
 function isHiveUrl(url) {
